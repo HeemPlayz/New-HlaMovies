@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your very best website to view films">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Hlamovies | Search Results</title>
+
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/2b137151-b92d-4e53-92f8-683f9efb93af%2FHlaMovies%20(2).png?v=1569001694600" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    
+    <%- include ("partials/nav") %>
+   
+    
+   <% if(search) { %>
+    <div class="container">
+    <div style="float:left; margin-top: 139px;">
+           <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px;">
+             Movies Search Results
+           </h3>
+         </div>
+    </div>
+        
+         
+         <div class="container" style="position: relative; margin-top: 200px;">
+            <% if(movies.length === 0) { %>
+                        <h5 class="text-center" style="margin-top: 20px;">
+                          No Results Found!
+                        </h5>
+                        <% } %>
+  <div class="row text-center">
+   <% for (var i = 0; i < movies.length; i++) { %>
+    <div class="col-sm-2">
+                      <div>
+        
+        <a href="/movies/<%= movies[i].title %>">
+        <img class="movies" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="<%= movies[i].image %>">
+        </a>
+        
+      </div>
+                    </div>
+                <% } %>
+  </div>
+</div>
+    
+    
+    <div class="container">
+    <div style="float:left; margin-top: 139px;">
+           <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px;">
+             Series Search Results
+           </h3>
+         </div>
+    </div>
+        
+         
+         <div class="container" style="position: relative; margin-top: 200px;">
+            <% if(series.length === 0) { %>
+                        <h5 class="text-center" style="margin-top: 20px;">
+                          No Results Found!
+                        </h5>
+                        <% } %>
+  <div class="row text-center">
+   <% for (var i = 0; i < series.length; i++) { %>
+    <div class="col-sm-2">
+                      <div>
+        
+        <a href="/series/<%= series[i].title %>">
+        <img class="movies" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="<%= series[i].image %>">
+        </a>
+                        
+                       
+        
+      </div>
+                    </div>
+                <% } %>
+    
+  </div>
+</div>
+    
+    <% } else { %>
+    
+    <form method="post" action="search">
+     <div class="container text-center" style="margin-top:61px;">
+<input name="search" style="background:transparent; color:white" class="form-control" id="myInput" type="text" placeholder="Search..">
+       <br/>
+       <button class="btn btn-outline-success text-center" type="submit">Search</button>
+</div>
+    </form>
+    
+    <% } %>
+          
+          <%- include ("partials/footer") %>
+    
+    
+    
+    
+  </body>
+</html>

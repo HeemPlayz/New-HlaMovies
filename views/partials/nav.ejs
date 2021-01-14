@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg">
+   
+  <a href="/"><img class="rounded-circle" style="width: 50px; height: 50px; margin-right: .7rem;" src="https://cdn.glitch.com/2b137151-b92d-4e53-92f8-683f9efb93af%2FHlaMovies%20(2).png?v=1569001694600"></a>
+    
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+  </button>
+
+  <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Movies
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/movies/category/action/page/1">Action</a>
+          <a class="dropdown-item" href="/movies/category/comedy/page/1">Comedy</a>
+          <a class="dropdown-item" href="/movies/category/drama/page/1">Drama</a>
+          <a class="dropdown-item" href="/movies/category/horror/page/1">Horror</a>
+          <a class="dropdown-item" href="/movies/category/crime/page/1">Crime</a>
+          <a class="dropdown-item" href="/movies/category/romance/page/1">Romance</a>
+          <a class="dropdown-item" href="/movies/category/thriller/page/1">Thriller</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/movies/category/all/page/1">All Movies</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Series
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/serieses/category/action/page/1">Action</a>
+          <a class="dropdown-item" href="/serieses/category/comedy/page/1">Comedy</a>
+          <a class="dropdown-item" href="/serieses/category/drama/page/1">Drama</a>
+          <a class="dropdown-item" href="/serieses/category/horror/page/1">Horror</a>
+          <a class="dropdown-item" href="/serieses/category/crime/page/1">Crime</a>
+          <a class="dropdown-item" href="/serieses/category/romance/page/1">Romance</a>
+          <a class="dropdown-item" href="/serieses/category/thriller/page/1">Thriller</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/serieses/category/all/page/1">All Serieses</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/statics">Statics</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/search">Search <i class="fas fa-search"></i></a>
+      </li>
+     
+     
+    </ul>
+    
+    
+  
+    <ul class="navbar-right" style="margin-right: 2pc;">
+       <li class="nav-item dropdown" style="list-style-type: none;">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class="fas fa-user" style="margin-right: 2px;"></i> Account 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown ">
+          <% if(!user) { %>
+          <a class="dropdown-item" href="/login">Login <i class="fas fa-sign-in-alt"></i></a>
+          <a class="dropdown-item" href="/register">Register <i class="fas fa-plus"></i></a>
+         <% } else { %>
+          <a class="dropdown-item" href="/profile">Profile <i class="fas fa-user"></i></a>
+        
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" style="color: red;" href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+         <% } %>
+       </li>
+    </ul>
+     
+    
+   
+  </div>
+</nav>
+    

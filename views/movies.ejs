@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your very best website to view films">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Hlamovies | <%= m %> Movies</title>
+
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/2b137151-b92d-4e53-92f8-683f9efb93af%2FHlaMovies%20(2).png?v=1569001694600" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    
+    <%- include ("partials/nav") %>
+   
+    
+   
+    <div class="container">
+    <div style="float:left; margin-top: 139px;">
+           <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px;">
+             <%= m %> Movies
+           </h3>
+         </div>
+    </div>
+        
+         
+         <div class="container" style="position: relative; margin-top: 200px;">
+  <div class="row text-center">
+   <% for (var i = 0; i < movies.length; i++) { %>
+    <div class="col-sm-2">
+                      <div>
+        
+        <a href="/movies/<%= movies[i].title %>">
+        <img class="movies" src="<%= movies[i].image %>">
+        </a>
+        
+      </div>
+                    </div>
+                <% } %>
+  </div>
+</div>
+    
+  
+   
+    <div class="text-center">
+      
+    
+    <div class="pagination ">
+      <% if(page === "1") { %>
+      
+      <% } else { %>
+      <a href="/movies/category/<%= cc %>/page/1">&laquo;</a>
+      <a href="/movies/category/<%= cc %>/page/<%= parseInt(page) - 1 %>">&lsaquo;</a>
+      <% } %>
+  
+      <a class="active" href="/movies/category/<%= cc %>/page/<%= parseInt(page) %>" disabled><%= parseInt(page) %></a>
+<a href="/movies/category/<%= cc %>/page/<%= parseInt(page) + 1 %>"><%= parseInt(page) + 1 %></a>
+   <a href="/movies/category/<%= cc %>/page/<%= parseInt(page) + 2 %>"><%= parseInt(page) + 2 %></a>
+    <a href="/movies/category/<%= cc %>/page/<%= parseInt(page) + 3 %>"><%= parseInt(page) + 3 %></a>
+ <a href="/movies/category/<%= cc %>/page/<%= parseInt(page) + 1 %>">&rsaquo;</a>
+      <a href="/movies/category/<%= cc %>/page/<%= parseInt(pages) %>">&raquo;</a>
+</div>
+   </div>       
+          <%- include ("partials/footer") %>
+    
+  </body>
+</html>

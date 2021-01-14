@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your very best website to view films">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Hlamovies | <%= u.username %> Profile</title>
+
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/2b137151-b92d-4e53-92f8-683f9efb93af%2FHlaMovies%20(2).png?v=1569001694600" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    
+    <%- include ("partials/nav") %>
+   
+    
+   <div class="container">
+     <div class="text-center">
+       <h2 style="margin-top: 1pc;">
+         <%= u.username %> <% if(admin) { %>
+         <i class="fas fa-crown" style="font-size: 25px;"></i>
+         <% } %>
+       </h2>
+       <p style="margin-top: 1pc;">
+         <%= u.email %>
+       </p>
+     </div>
+    </div>
+    
+    
+    <div class="container" style="position: relative; margin-top: 200px;">
+  <div class="row text-center">
+   
+    <div class="col-sm-3">
+                      <div>
+        
+        <form method="post" action="/delete-account/<%= u.username %>">
+          <button type="submit" class="rr">
+            Delete Account
+          </button>
+                        </form>
+        
+        
+      </div>
+                    </div>
+
+    <% if(!admin) { %>
+    <div class="col-sm-3">
+                      <div>
+        
+        <form method="post" action="/promote/<%= u.username %>">
+            <button type="submit" class="rr">
+            Promote To Admin
+          </button>
+                        </form>
+        
+        
+      </div>
+                    </div>
+    <% } else { %>
+    <div class="col-sm-3">
+                      <div>
+        
+        <form method="post" action="/demote/<%= u.username %>">
+           <button type="submit" class="rr">
+            Demote To User
+          </button>
+                        </form>
+        
+        
+      </div>
+                    </div>
+    <% } %>
+
+    
+  </div>
+</div>
+          
+          <%- include ("partials/footer") %>
+    
+  </body>
+</html>

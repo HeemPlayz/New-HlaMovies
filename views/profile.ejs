@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your very best website to view films">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Hlamovies | <%= u.username %> Profile</title>
+
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/2b137151-b92d-4e53-92f8-683f9efb93af%2FHlaMovies%20(2).png?v=1569001694600" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    
+    <%- include ("partials/nav") %>
+   
+    <div style="height: 100vh;">
+      
+    
+   <div class="container " style="margin-top: 50px;">
+     <div class="text-center">
+       <% if(!avatar) { %>
+       <a href="/manage-my-account"><img style="border-radius: 50%; width: 150px;" src="https://cdn.discordapp.com/attachments/786637245121429588/796695213539196938/user-icon-human-person-sign-vector-id587957104.png"></a>
+       <% } else { %>
+       <a href="/manage-my-account"><img style="border-radius: 50%; width: 150px;" src="<%= avatar.avatar %>"></a>
+       <% } %>
+       <h2 style="margin-top: 1pc;">
+         <%= u.username %>
+       </h2>
+     </div>
+     <div class="container cc" style="margin-top: 50px; ">
+    <div style="float:left;">
+           <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px;">
+            Information:<br> <span style="font-size: 20px;">Username: <%= u.username %><br>Email: <%= u.email %></span>
+              <br>
+              <br>
+             <a class="btn btn-outline-danger" href="/manage-my-account">Manage</a>
+              <br>
+           </h3>
+         </div>
+    </div><br>
+   
+      <% if(Admins !== null) { %>
+     
+    
+     <div class="container cc" style="margin-top: 50px; ">
+    <div style="float:left;">
+           <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px;">
+           Your Permissions:<br>
+             <br>
+              <div class="row">
+                <div class="col-sm-2">
+             <a class="btn btn-outline-danger" href="/add-movie">Add Movie</a>
+                </div> <br>
+                <div class="col-sm-2">
+             <a class="btn btn-outline-danger" href="/add-series">Add Series</a>     
+                </div> <br>
+                <div class="col-sm-2">
+             <a class="btn btn-outline-danger" href="/add-Season">Add Season</a>
+                </div> <br>
+                <div class="col-sm-2">
+             <a class="btn btn-outline-danger" href="/add-episode">Add Episode</a>
+                </div> <br>
+             </div>
+           </h3>
+         </div>
+    </div>
+     
+
+    
+    <% } else { %>
+    
+    <% } %>
+   
+     <% if(user.username === "HeemPlayz") { %>
+     
+    
+     <div class="container cc" style="margin-top: 50px; display: block">
+    <div style="float:left;">
+           <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px;">
+           HeemPlayz Special Permissions:<br>
+             <br>
+             <a class="btn btn-outline-danger" href="/manage-users">Manage Users</a>
+           </h3>
+         </div>
+    </div>
+     
+
+    
+    <% } else { %>
+    
+    <% } %>
+    </div>
+    </div>
+   
+   
+    
+   
+   
+          
+          <%- include ("partials/footer") %>
+    
+  </body>
+</html>

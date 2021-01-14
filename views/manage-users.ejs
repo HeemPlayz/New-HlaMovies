@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your very best website to view films">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Hlamovies | Manage Users</title>
+
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/2b137151-b92d-4e53-92f8-683f9efb93af%2FHlaMovies%20(2).png?v=1569001694600" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    
+    <%- include ("partials/nav") %>
+   
+    
+   
+   <div class="container">
+<input  style="background:transparent; color:white" class="form-control" id="myInput" type="text" placeholder="Search..">
+</div>
+    
+    <%  for (var i = 0; i < users.length; i++) { %>
+    
+    <div class="container">
+      
+    
+      <div style="margin-top:3pc;" class="prime-servers">
+          <br>
+          <h4 style="margin-left: 1.6pc;" class="text-white"> <%= users[i].username %></h4>
+    <a style="text-align: center; margin-left: 1.6pc;" class="rr" href="/manage/<%= users[i].username %>">Manage</a> 
+        <p style="float: left; margin-left: 1.6pc;"><%= users[i].email %></p>
+        
+                  </div>
+    </div>
+    
+    <% } %>
+          
+    <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".prime-servers").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+    
+          <%- include ("partials/footer") %>
+    
+  </body>
+</html>

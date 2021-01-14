@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your very best website to view films">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Hlamovies | Manage My Account</title>
+
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/2b137151-b92d-4e53-92f8-683f9efb93af%2FHlaMovies%20(2).png?v=1569001694600" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    
+    <%- include ("partials/nav") %>
+   
+<form action="/save-my-account/<%= u.username %>" method="POST" class="card-server container" style="margin-top: 50px;">    
+   <div class="container" style="margin-top: 50px; margin-bottom: 300px;">
+     <div class="float-left">
+        <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px; display:inline-block; margin-bottom: 2pc;">
+          Your Current Avatar: 
+          <% if(avatar) { %>
+              <img style="border-radius: 50%; width: 50px; display:inline-block" src="<%= avatar.avatar %>">
+          <% } else { %>
+                 <img style="border-radius: 50%; width: 50px; vertical-align:top; display:inline-block" src="https://cdn.discordapp.com/attachments/786637245121429588/796695213539196938/user-icon-human-person-sign-vector-id587957104.png">
+          <% } %>
+          <br>
+          <span style="font-size: 20px;">
+          Change Avatar: 
+            <% if(avatar) { %>
+              <input class="accs" style="font-size: 20px; width: 100%;" name="newavatar" value="<%= avatar.avatar %>" required>
+          <% } else { %>
+              <input class="accs" style="font-size: 20px; width: 100%;" name="newavatar" placeholder="Image or Gif Link" required>
+            <% } %>
+          </span>
+       </h3>
+       <br>
+       <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px; display:inline-block; margin-bottom: 2pc;">
+          Your Current Name: <code><%= u.username %></code>
+          <br>
+          <span style="font-size: 20px;">
+          Change Name: 
+            
+              <input class="accs" style="font-size: 20px; width: 100%;" name="newname" value="<%= u.username %>" required>
+          </span>
+       </h3>
+       <br>
+       <h3 class="text-white" style="border-left: 3px solid red; padding-left: 12px; display:inline-block; margin-bottom: 2pc;">
+         Your Current Email: <code><%= u.email %></code>
+          <br>
+          <span style="font-size: 20px;">
+          Change Email: 
+            
+              <input class="accs" style="font-size: 20px; width: 100%;" name="newemail" value="<%= u.email %>" required>
+          </span>
+       </h3>
+       <div class="text-center" style="margin-bottom: 2pc;">
+       <button type="submit" class="rr">Save</button>
+     </div>
+     </div>
+    
+     
+           
+
+     
+    </div>
+    </form>
+    
+   
+    
+   
+   
+          
+          <%- include ("partials/footer") %>
+    
+  </body>
+</html>

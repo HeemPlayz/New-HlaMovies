@@ -1,0 +1,353 @@
+/* this file is loaded by index.html and styles the page */
+
+* {
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behaviour: smooth
+}
+
+body {
+background-color: #282828;
+  font-family: 'Poppins', sans-serif !important;
+  color: white;
+}
+
+.navbar{
+  background-color: transparent;
+  /*margin: 2rem;*/
+  border-radius: 0px;
+  padding-top: 1pc;
+  padding-left: 1.4pc;
+}
+
+.nav-link{
+  color: white;
+}
+.nav-link:hover{
+  color: red;
+  
+  transition: all ease-out .2999s;
+}
+
+.nav-item{
+  padding-right: 1pc;
+}
+
+.form{
+  margin-top: 150px;
+  background-color: #202020;
+   border-radius: 5px ;
+  border: 1px solid #000;
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.form textarea {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: transparent;
+  width: 50%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border: 2.7px solid red;
+  border-radius: 5px;
+  transition: all ease-out .2s
+}
+
+@keyframes but {
+  0% {background-color: transparent}
+  50% {background-color: red}
+  100% {background-color: darkred}
+}
+
+.form button:hover{
+  background: red;
+  
+}
+
+.form button:focus{
+  background: red;
+  animation-name: but;
+  animation-duration: .9s;
+  animation-iteration-count: infinite;
+}
+
+.movies{
+  height: 260px;
+  width: 175px;
+  margin-right: .7rem;
+  margin-top: .8rem;
+  border-radius: 15px;
+
+  transition: all ease-out .2s
+}
+
+.movies:hover{
+  transform: scale(1.04);
+}
+
+.ww {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: transparent;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border: 2.7px solid red;
+  border-radius: 5px;
+  transition: all ease-out .2s;
+  margin-top: 10px;
+}
+
+.ww:hover{
+  background: red;
+  
+}
+
+input[type=text]:disabled {
+  background: #696969;
+}
+
+.episode{
+  height: 200px;
+  width: 115px;
+  margin-right: .7rem;
+  margin-top: .8rem;
+  border-radius: 15px;
+
+  transition: all ease-out .2s
+}
+
+.form select {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.form option {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.card-server {
+  padding-top: 10px ;
+  padding-right: 30px ;
+  padding-left: 30px ;
+  padding-bottom: 10px ;
+  background: #202020 ;
+ 
+  border-radius: 5px ;
+  border: 1px solid #000;
+}
+
+.rr{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: transparent;
+  width: 50%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border: 2.7px solid red;
+  border-radius: 5px;
+  transition: all ease-out .2s
+}
+
+.rr:hover{
+   background: red;
+  text-decoration: none;
+  color: white;
+}
+
+
+.pagination {
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.pagination a {
+  color: white;
+  background: #2c2b2b;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+.pagination a.active {
+  background-color: #dc3545;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #363232;}
+
+
+footer {
+  background: #161819;
+}
+footer .footer-title {
+  color: white; /* #292929 */
+  font-weight: bold;
+  margin-top: 10px;
+}
+footer .footer-desc {
+  color: white; /* #494949 */
+}
+footer .footer-socials {
+  color: #e4e4e4; /* #494949 */
+}
+footer .footer-socials:hover {
+  color: #8b8b8b;
+  text-decoration: none;
+  transition: 0.5s;
+}
+footer .footer-copyright {
+  background: #0f0f0f;
+}
+footer .footer-copyright-text {
+  color: #fff;
+}
+footer .footer-copyright-link {
+  color: #d03939;
+}
+footer .footer-copyright-link:hover {
+  color: #ab3232;
+}
+
+::-webkit-scrollbar {
+  width: 1.6666px;
+}
+
+
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0f0f0f; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff0002; 
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a10608; 
+}
+
+.prime-servers{
+  background-image: url("https://cdn.discordapp.com/attachments/722578466335359096/728016280216666132/4.2.png");
+  background-repeat: no-repeat;
+  height: 100px;
+ border-radius: 12px;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-server {
+  padding-top: 10px ;
+  padding-right: 30px ;
+  padding-left: 30px ;
+  padding-bottom: 290px ;
+  background: #202020 ;
+ hieght: 100vh;
+  border-radius: 5px ;
+  border: 1px solid #000;
+}
+
+.accs {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  padding: 7px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+code{
+  color: #dc3545
+}
+
+.cc{
+  margin-bottom: 18pc;
+}
+
+.ads{
+  width: 535px;
+  height 312px;
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .ads{
+  width: 80%;
+  height 200px;
+  border-radius: 12px;
+}
+}
+
