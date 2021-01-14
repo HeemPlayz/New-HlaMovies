@@ -857,6 +857,10 @@ app.get("/edit/movie/:movie", isLoggedIn, async (req,res)=>{
     let m = req.params.movie;
   let g = await Movie.aggregate([ { $sample: { size: 4 } } ])
   
+  if(!user) return res.redirect("/")
+ let Admins = await Admin.findOne({username: user.username})
+ if(!Admins) return res.redirect("/")
+  
     Movie.findOne({
       title: m
     }, async (err, movie) => {
@@ -882,7 +886,10 @@ app.get("/edit/series/:series", isLoggedIn, async (req,res)=>{
   const user = req.isAuthenticated() ? req.user : null;
     let m = req.params.series;
   
-  
+    if(!user) return res.redirect("/")
+ let Admins = await Admin.findOne({username: user.username})
+ if(!Admins) return res.redirect("/")
+	
     Series.findOne({
       title: m
     }, async (err, series) => {
@@ -905,7 +912,10 @@ app.get("/edit/series/:series/season/:season", isLoggedIn, async (req,res)=>{
     let m = req.params.series;
   let s = req.params.season;
   
-  
+    if(!user) return res.redirect("/")
+ let Admins = await Admin.findOne({username: user.username})
+ if(!Admins) return res.redirect("/")
+	
     Season.findOne({
       title: m,
       season: s
@@ -930,6 +940,9 @@ app.get("/edit/series/:series/season/:season/episode/:episode", isLoggedIn, asyn
   let s = req.params.season;
   let e = req.params.episode
   
+    if(!user) return res.redirect("/")
+ let Admins = await Admin.findOne({username: user.username})
+ if(!Admins) return res.redirect("/")
   
     Episode.findOne({
       title: e,
