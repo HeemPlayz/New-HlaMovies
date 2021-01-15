@@ -318,7 +318,6 @@ app.post("/add-movie", isLoggedIn ,(req,res)=>{
   let embed = new Discord.MessageEmbed()
   .setTitle("New Movie!")
   .setColor("#2f3136")
-  .setURL(`https://hlamovies.xyz/movies/${title}`)
   .setThumbnail(image)
   .setDescription(`Title: \`${title}\`
   Date: \`${date}\`
@@ -363,7 +362,6 @@ app.post("/add-series", isLoggedIn ,(req,res)=>{
   let embed = new Discord.MessageEmbed()
   .setTitle("New Series!")
   .setColor("#2f3136")
-  .setURL(`https://hlamovies.xyz/series/${title}`)
   .setThumbnail(image)
   .setDescription(`Title: \`${title}\`
   Date: \`${date}\`
@@ -409,7 +407,6 @@ app.post("/add-season", isLoggedIn ,(req,res)=>{
   let embed = new Discord.MessageEmbed()
   .setTitle("New Season!")
   .setColor("#2f3136")
-  .setURL(`https://hlamovies.xyz/series/${title}/season/${season}`)
   .setThumbnail(image)
   .setDescription(`Title: \`${title}\`
   Season: \`${season}\`
@@ -458,7 +455,6 @@ app.post("/add-episode", isLoggedIn ,(req,res)=>{
   let embed = new Discord.MessageEmbed()
   .setTitle("New Episode!")
   .setColor("#2f3136")
-  .setURL(`https://hlamovies.xyz/series/${series}/season/${season}/episode/${title}`)
   .setDescription(`Title: \`${title}\` | ${season} of ${series}
   Date: \`${date}\`
   Duration: \`${duration}\`
