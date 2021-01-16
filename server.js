@@ -1102,7 +1102,7 @@ app.get("/manage-users",(req,res)=>{
   if(user.username === "HeemPlayz") {
    User.find({
     
-  }).sort({ _id:-1 }).limit(4).exec((err, users) => {
+  }).sort({ _id:-1 }).exec((err, users) => {
   if(err)console.log(err);
     res.render("views/manage-users.ejs", {
       user,
