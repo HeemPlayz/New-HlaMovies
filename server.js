@@ -289,7 +289,7 @@ app.get('/add-season/:series', isLoggedIn, async (req, res) => {
 
 app.post("/add-movie", isLoggedIn ,(req,res)=>{
   let webhook = new Discord.WebhookClient("799013159263535124", "8i46Xy7OL8ba2h3e1SibIB9JDhNiuJvWKEKFsRvf0mwHS5ftTnbMUi1tyfRjlndLiU-j");
-  const title = req.body.title,
+  const title = req.body.title.replace(/(^\s+|\s+$)/g, ''),
         image = req.body.image,
         date = req.body.date,
         duration = req.body.duration,
@@ -336,7 +336,7 @@ app.post("/add-movie", isLoggedIn ,(req,res)=>{
 
 app.post("/add-series", isLoggedIn ,(req,res)=>{
   let webhook = new Discord.WebhookClient("799015608162320435", "Xo-fkXyTfJ42KDEopXq_c_NFJtTGEtn_FXo9LL95NZBfjPVv_OERamq86_kMZ96G63S2");
-  const title = req.body.title,
+  const title = req.body.title.replace(/(^\s+|\s+$)/g, ''),
         image = req.body.image,
         date = req.body.date,
         duration = req.body.duration,
@@ -380,7 +380,7 @@ app.post("/add-series", isLoggedIn ,(req,res)=>{
 
 app.post("/add-season", isLoggedIn ,(req,res)=>{
   let webhook = new Discord.WebhookClient("799016520969617448", "jOoG1PiRH--xoPxdSSI4sPVqLhO0nLk_VPLGrGv7UpVF3-LZet-zufs2lh4vuj1NQWSc");
-  const title = req.body.series,
+  const title = req.body.series.replace(/(^\s+|\s+$)/g, ''),
         season = req.body.season,
         image = req.body.image,
         date = req.body.date,
@@ -424,7 +424,7 @@ app.post("/add-season", isLoggedIn ,(req,res)=>{
 
 app.post("/add-episode", isLoggedIn ,(req,res)=>{
   let webhook = new Discord.WebhookClient("799016767913328681", "kXHPzV3IZtnPJs4T_FpzCId8uoVPoSprkMcxHWGh9kIfxb4Jl4EIIRi-Z47r4UfhZ5io");
-  const title = req.body.title,
+  const title = req.body.title.replace(/(^\s+|\s+$)/g, ''),
         series = req.body.series,
         season = req.body.season,
         date = req.body.date,
