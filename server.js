@@ -601,6 +601,14 @@ app.post("/edit-series", isLoggedIn ,(req,res)=>{
   Series.findOne({
     title: titleold
   }, async (err, series) => {
+     Season.find({
+    title: titleold
+  }).sort({ _id:-1 }).exec((err, serieses) => {
+  if(err)console.log(err);
+       Episode.find({
+    series: titleold
+  }).sort({ _id:-1 }).exec((err, episodes) => {
+  if(err)console.log(err);
                 
                 series.title = title
     series.image = image
@@ -613,8 +621,20 @@ app.post("/edit-series", isLoggedIn ,(req,res)=>{
     
     
     series.save()
+       
+       serieses.forEach(m => {
+         m.title = title
+         m.save()
+       })
+         
+          episodes.forEach(m => {
+         m.title = title
+         m.save()
+       })
                 
                 })
+     })
+  })
   
   
   res.redirect(`/series/${title}`)
@@ -646,6 +666,11 @@ app.post("/edit-season", isLoggedIn ,(req,res)=>{
     title: titleold,
     season: seasonold,
   }, async (err, seasonn) => {
+     Episode.find({
+    series: titleold,
+       season: seasonold
+  }).sort({ _id:-1 }).exec((err, episodes) => {
+  if(err)console.log(err);
                 
                 seasonn.title = title
     seasonn.season = season
@@ -660,9 +685,14 @@ app.post("/edit-season", isLoggedIn ,(req,res)=>{
     
     
     seasonn.save()
+       
+       episodes.forEach(m => {
+         m.title = title
+         m.save()
+       })
                 
                 })
-  
+})
   
   res.redirect(`/series/${title}/season/${season}`)
         
